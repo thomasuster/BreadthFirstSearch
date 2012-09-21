@@ -4,8 +4,8 @@ void main() {
    *         (1)
    *        /   \
    *     (2)     (3)
-   *    /   \   /   .
-   *  (4)  (5) (6)  
+   *    /   \   /   
+   *  (4)  (5) (6)   
    */
   Node node6 = new Node('6');
   Node node5 = new Node('5');
@@ -14,11 +14,12 @@ void main() {
   Node node2 = new Node('2', node4, node5);
   Node node1 = new Node('1', node2, node3);
   
- printTree(node1); 
+ printTree(node1);
+ 
 }
 
-void printTree(Node node) {
-  _printTree([node]);
+void printTree(Node head) {
+  _printTree([head]);
 }
 
 void _printTree(List<Node> nodes) {
@@ -28,7 +29,7 @@ void _printTree(List<Node> nodes) {
   }
   else {
     List<Node> nodesToProcess = [];
-    for(int i = 0; i<nodes.length; i++) {
+    for(int i = 0; i < nodes.length; i++) {
       Node node = nodes[i];
       print(node.id);
       
